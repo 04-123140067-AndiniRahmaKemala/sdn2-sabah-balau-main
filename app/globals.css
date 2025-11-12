@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ... (kode tailwind base, components, utilities Anda) ... */
+
+/* ==================================
+CUSTOM STYLING UNTUK ADMIN DASHBOARD
+==================================
+*/
+
+/* Kartu besar di 'Pilih Kelas' */
+.card-admin {
+  @apply rounded-xl border border-gray-200 bg-white p-6 text-center shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer;
+}
+
+/* Kartu daftar di 'Pilih Pelajaran' */
+.card-admin-list {
+  @apply flex items-center rounded-lg border border-gray-200 bg-white p-4 shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer;
+}
+
+/* Tombol kembali (abu-abu) */
+.btn-kembali {
+  @apply inline-flex items-center mt-6 px-4 py-2 border border-slate-300 text-slate-600 rounded-full font-semibold hover:bg-slate-50 transition-all duration-200;
+}
+
+/* Tombol simpan (biru) */
+.btn-simpan {
+  @apply inline-flex items-center px-6 py-2 border border-transparent bg-blue-600 text-white rounded-md font-semibold shadow-sm transition-all duration-300 hover:bg-blue-700 hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
